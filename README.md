@@ -113,6 +113,23 @@ only a *classification* of the user agent — not the raw header. Query text and
 tool arguments are not logged. Full policy:
 [Datenschutz](https://my-flohmarkt.de/datenschutz).
 
+## Stability and versioning
+
+Tool names and their arguments are a public contract and are treated as
+write-once: they are never renamed or given a new required argument. Changes
+are additive — a new optional argument, a new field in a result — so a client
+written against today's tools keeps working.
+
+The version you can observe is `serverInfo.version` from `initialize`, and it
+matches the version published in the registry. This repository is documentation:
+its git history is the changelog, and the authoritative machine-readable copy of
+`server.json` is always the one the
+[registry](https://registry.modelcontextprotocol.io/v0.1/servers/de.my-flohmarkt%2Fflea-market-catalog/versions/latest)
+serves — the copy here can lag behind by a commit.
+
+Breaking anything in that contract would mean a new tool alongside the old one,
+not a silent change to the existing one.
+
 ## Links
 
 - Website: [my-flohmarkt.de](https://my-flohmarkt.de) · [FAQ](https://my-flohmarkt.de/faq)
