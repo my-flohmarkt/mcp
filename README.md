@@ -18,8 +18,9 @@ https://mcp.my-flohmarkt.de/mcp
 - **Registry:** [`de.my-flohmarkt/flea-market-catalog`](https://registry.modelcontextprotocol.io/v0.1/servers/de.my-flohmarkt%2Fflea-market-catalog/versions/latest)
   in the official MCP registry, namespace verified by DNS.
 
-This repository holds the published registry metadata, documentation and
-examples. It is **not** the server's source code.
+This repository holds documentation and examples. It is **not** the server's
+source code, and it deliberately keeps no copy of `server.json`: the registry
+link above serves the current metadata, so there is nothing here to go stale.
 
 ## Tools
 
@@ -121,11 +122,12 @@ are additive — a new optional argument, a new field in a result — so a clien
 written against today's tools keeps working.
 
 The version you can observe is `serverInfo.version` from `initialize`, and it
-matches the version published in the registry. This repository is documentation:
-its git history is the changelog, and the authoritative machine-readable copy of
-`server.json` is always the one the
-[registry](https://registry.modelcontextprotocol.io/v0.1/servers/de.my-flohmarkt%2Fflea-market-catalog/versions/latest)
-serves — the copy here can lag behind by a commit.
+matches the version published in the registry, which is where the
+machine-readable metadata lives:
+
+```
+https://registry.modelcontextprotocol.io/v0.1/servers/de.my-flohmarkt%2Fflea-market-catalog/versions/latest
+```
 
 Breaking anything in that contract would mean a new tool alongside the old one,
 not a silent change to the existing one.
